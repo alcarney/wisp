@@ -27,12 +27,13 @@ jobs:
     - name: Bootstrap TinyGo
       run: |
         ./scripts/setup-tinygo.sh
+        echo "::set-env name=PATH::$PATH:/usr/local/tinygo/bin"
       env:
         VERSION: "0.13.0"
                     
     - name: Build WASM
       run: |
-        tinygo build -no-debug -target wasm -o public/js/wisp.wasm main.go 
+        tinygo build -no-debug -target wasm -o public/js/wisp.wasm main.go
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
