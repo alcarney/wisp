@@ -50,7 +50,7 @@ function logText(addr, length) {
 // Add our own functions to the env we pass to the wasm module
 go.importObject.env['main.go.log'] = logText
 
-WebAssembly.instantiateStreaming(fetch("/js/wisp.wasm"), go.importObject)
+WebAssembly.instantiateStreaming(fetch('/js/wisp.wasm'), go.importObject)
     .then(module => {
         wasm = module.instance
 
