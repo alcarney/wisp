@@ -3,7 +3,9 @@
 # Script to bootstrap tinygo in Github Actions
 
 url="https://github.com/tinygo-org/tinygo/releases/download/v${VERSION}/tinygo_${VERSION}_amd64.deb"
-curl $url --output "tinygo_${VERSION}.deb"
+curl -s $url -o "tinygo_${VERSION}.deb"
+
+ls -lh
 
 sudo apt install "./tinygo_${VERSION}.deb"
 tinygo
