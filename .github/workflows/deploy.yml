@@ -35,6 +35,7 @@ jobs:
       run: |
         tinygo build -no-debug -target wasm -o public/js/wisp.wasm main.go
         ls -lR .
+        git status --porcelain
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
