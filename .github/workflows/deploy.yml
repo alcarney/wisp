@@ -24,6 +24,12 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - name: Bootstrap TinyGo
+      run: |
+        ./scripts/setup-tinygo.sh
+      env:
+        VERSION: "0.13.0"
+
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
