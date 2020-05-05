@@ -29,6 +29,10 @@ jobs:
         ./scripts/setup-tinygo.sh
       env:
         VERSION: "0.13.0"
+                    
+    - name: Build WASM
+      run: |
+        tinygo build -no-debug -target wasm -o public/js/wisp.wasm main.go 
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
