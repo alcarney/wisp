@@ -8,4 +8,6 @@ wget $url -O "tinygo_${VERSION}.deb"
 ls -lh
 
 sudo apt install "./tinygo_${VERSION}.deb"
+
+echo $PATH
 tinygo
