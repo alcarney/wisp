@@ -9,5 +9,6 @@ ls -lh
 
 sudo apt install "./tinygo_${VERSION}.deb"
 
-echo $PATH
+# Fix the path since tinygo does not seem to install itself to a standard location?
+export PATH=$PATH:/usr/local/tinygo/bin/
 tinygo
